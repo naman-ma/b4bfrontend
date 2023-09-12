@@ -1,0 +1,334 @@
+<article class="profile_article">
+    <div class="card_block prof_proc_form">
+        <div class="card_header d-flex">
+            <h5>My Manufacturer Profile</h5>
+            <button class="btn_prof_edit edit_fields_btn"><i class="fa fa-pencil-square-o"></i></button>
+        </div>
+        <div class="card_content">
+            <div class="wizard proc-form-steps">
+                <div class="wizard-inner proc-form-nav">
+                    <ul class="nav nav-tabs prof_navManu" role="tablist">
+                        <li role="presentation" class="active">
+                            <a class="active" href="#step1" data-toggle="tab" aria-controls="step1" role="tab"
+                                title="Personal Details">
+                                Company
+                            </a>
+                        </li>
+                        <li role="presentation" class="">
+                            <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Payment">
+                                Other details
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /. proc-form-nav -->
+
+                <div class="proc-form-cont">
+                    <form class="theme-form" role="form">
+                        <div class="tab-content">
+
+                            <div class="tab-pane active" role="tabpanel" id="step1">
+                                <div class="tab-pane-head">
+                                    <div class="profile_img_group d-md-flex align-items-end">
+                                        <div class="prof_pic">
+
+                                            <figure class="prod_fig">
+                                                <img *ngIf="!userDetails?.profile_pic" src="assets/images/prof_pic.png"
+                                                    alt="profile_pic" />
+
+                                                <img *ngIf="userDetails?.profile_pic"
+                                                    class="pointer-cursor-hover profile-img"
+                                                    [src]="(newProfilePicture ? newProfilePicture : (backendUrl+userDetails?.profile_pic))"
+                                                    alt="profile_pic" (click)="openProfilePic()" />
+
+                                            </figure>
+
+                                            <label class="btn-file" *ngIf="profilePictureToUpdate">
+                                                <input type="button" value="Update Profile Picture"
+                                                    class="btn btn-theme btn-sm pointer-cursor-hover"
+                                                    (click)="updateProfilePicture()" />
+                                            </label>
+
+                                            <label class="btn_prof_pic_edit edit_fields_btn">
+                                                <input type="file" class="hide" (change)="onPictureSelect($event)"
+                                                    accept="image/*" />
+                                                <i class="fa fa-pencil-square-o"></i>
+                                            </label>
+
+                                        </div>
+                                        <div class="prof_pic_list">
+
+                                            <label class="btn_prof_pic_edit edit_fields_btn">
+                                                <i class="fa fa-pencil-square-o"></i>
+                                            </label>
+
+                                            <h5>Company Video (Please add a corporate video)</h5>
+                                            <div class="prof_video_list d-sm-flex">
+                                                <div class="prof_video_item">
+                                                    <div class="prof_vdo_pic">
+                                                        <img src="assets/images/video_img1.png" alt="">
+                                                    </div>
+                                                </div>
+                                                <!-- /. prof_video_item -->
+                                                <div class="prof_video_item">
+                                                    <div class="prof_vdo_pic">
+                                                        <img src="assets/images/video_img2.png" alt="">
+                                                    </div>
+                                                </div>
+                                                <!-- /. prof_video_item -->
+                                                <div class="prof_video_item">
+                                                    <div class="prof_vdo_pic">
+                                                        <img src="assets/images/video_img3.png" alt="">
+                                                    </div>
+                                                </div>
+                                                <!-- /. prof_video_item -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ./ pane head -->
+
+                                <div class="tab-pane-body">
+                                    <div class="profile-form">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Company Name : **</label>
+                                                    <input class="form-control" type="text"
+                                                        value="Atlanta Fabric Pvt Lts." />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Address : **</label>
+                                                    <input class="form-control" type="text"
+                                                        value="124, sence singo park, New york city " />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>City :**</label>
+                                                    <select class="select-field form-control">
+                                                        <option>New york city </option>
+                                                        <option value="ACT">Australian Capital Territory
+                                                        </option>
+                                                        <option value="NSW">New South Wales</option>
+                                                        <option value="NT ">Northern Territory</option>
+                                                        <option value="QLD">Queensland</option>
+                                                        <option value="SA ">South Australia</option>
+                                                        <option value="TAS">Tasmania</option>
+                                                        <option value="VIC">Victoria</option>
+                                                        <option value="WA ">Western Australia</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Country :**</label>
+                                                    <select class="select-field form-control">
+                                                        <option>USA</option>
+                                                        <option value="AF" data-capital="Kabul">
+                                                            Afghanistan</option>
+                                                        <option value="AX" data-capital="Mariehamn">
+                                                            Aland Islands</option>
+                                                        <option value="AL" data-capital="Tirana">Albania
+                                                        </option>
+                                                        <option value="DZ" data-capital="Algiers">
+                                                            Algeria</option>
+                                                        <option value="AS" data-capital="Pago Pago">
+                                                            American Samoa</option>
+                                                        <option value="AD" data-capital="Andorra la Vella">Andorra
+                                                        </option>
+                                                        <option value="AO" data-capital="Luanda">Angola
+                                                        </option>
+                                                        <option value="AI" data-capital="The Valley">
+                                                            Anguilla</option>
+                                                        <option value="AG" data-capital="St. John's">
+                                                            Antigua and Barbuda</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Website **</label>
+                                                    <input class="form-control" type="text" value="www.atlanta.com" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Tel Fixed : **</label>
+                                                    <input class="form-control" type="text" value="+1-34512000" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Tel Mobile : **</label>
+                                                    <input class="form-control" type="text" value="+1-34512000" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Contact First Name : **</label>
+                                                    <input class="form-control" type="text" value="Atlanta " />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Contact Last Name : **</label>
+                                                    <input class="form-control" type="text" value="karen lio" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Email **</label>
+                                                    <input class="form-control" type="text" value="info@atlanta.com" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ./ pane body -->
+
+                                <div class="tab-pane-footer">
+                                    <ul class="list-inline-btns  text-md-right text-center">
+                                        <li role="presentation" class="">
+                                            <!-- <button type="button" class="btn btn-theme btn-gray next-step">
+                                                Next
+                                            </button> -->
+                                            <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab"
+                                                class="btn btn-theme btn-gray next-step">
+                                                Next
+                                            </a>
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                                <!-- ./ pane footer -->
+                            </div>
+
+                            <!-- ./tab-pane  step1 -->
+                            <div class="tab-pane" role="tabpanel" id="complete">
+                                <div class="payment-complete">
+                                    <div class="tab-pane-body">
+                                        <div class="profile-form">
+                                            <div class="row">
+                                                <div class="col-md-12 mt-10 ">
+                                                    <label>What is your company’s area of expertise
+                                                        (market segment, service) ?
+                                                        <small>You can select Multiple choose **</small>
+                                                    </label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <select class="select-field form-control">
+                                                            <option>Cardiology</option>
+                                                            <option>option 1</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <select class="select-field form-control">
+                                                            <option> Select sub category</option>
+                                                            <option>option 1</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>What are you looking by being online ?
+                                                            **</label>
+                                                        <select class="select-field form-control">
+                                                            <option>Sales, Distributors, branding
+                                                            </option>
+                                                            <option>option 1</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>List one of major competitors **</label>
+                                                        <input class="form-control" type="text" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label>Do you want to market your products
+                                                            online globally ? **</label>
+                                                        <div class="custom-radiobtn radio-inline">
+                                                            <div class="radio-btn">
+                                                                <input type="radio" id="test1" name="radio-group1"
+                                                                    checked="">
+                                                                <label for="test1">No</label>
+                                                            </div>
+                                                            <div class="radio-btn">
+                                                                <input type="radio" id="test2" name="radio-group1">
+                                                                <label for="test2">Yes</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <label>Where do you want to market your products
+                                                        online ?</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+
+                                                        <select class="select-field form-control">
+                                                            <option>Select Continent </option>
+                                                            <option>option 1</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <select class="select-field form-control">
+                                                            <option>Select Country</option>
+                                                            <option value="AF" data-capital="Kabul">
+                                                                Afghanistan</option>
+                                                            <option value="AX" data-capital="Mariehamn">
+                                                                Aland Islands</option>
+                                                            <option value="AL" data-capital="Tirana">
+                                                                Albania</option>
+                                                            <option value="DZ" data-capital="Algiers">
+                                                                Algeria</option>
+                                                            <option value="AS" data-capital="Pago Pago">
+                                                                American Samoa</option>
+                                                            <option value="AD" data-capital="Andorra la Vella">
+                                                                Andorra
+                                                            </option>
+                                                            <option value="AO" data-capital="Luanda">
+                                                                Angola</option>
+                                                            <option value="AI" data-capital="The Valley">Anguilla
+                                                            </option>
+                                                            <option value="AG" data-capital="St. John's">Antigua and
+                                                                Barbuda</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- ./ pane body -->
+                                    <div class="tab-pane-footer">
+                                        <div class="steps-form-submit text-md-right text-center">
+                                            <input class="btn btn-theme btn-gray form-sub-btn" type="submit" name=""
+                                                value="Submit" placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ./tab-pane  complete -->
+
+                            <div class="clearfix"></div>
+                        </div>
+                    </form>
+                </div>
+                <!-- ./ proc-form-cont -->
+            </div>
+            <!-- ./ proc-form-steps -->
+        </div>
+    </div>
+</article>
+<!-- / End aside -->

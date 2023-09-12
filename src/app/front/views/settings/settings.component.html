@@ -1,0 +1,23 @@
+<app-header></app-header>
+
+<section class="profile-page-sec">
+    <div class="container">
+        <div class="row">
+
+            <!-- left sidebar component -->
+            <div class="col-md-3">
+                <app-left-sidebar></app-left-sidebar>
+            </div>
+            <!-- ./ End sidebar -->
+
+            <!-- other component will be here-->
+            <div class="col-md-9">
+                <router-outlet></router-outlet>
+            </div>
+            <!-- / End aside -->
+
+        </div>
+    </div>
+</section>
+
+<app-footer></app-footer>

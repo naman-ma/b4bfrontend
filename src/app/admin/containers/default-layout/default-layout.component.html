@@ -1,0 +1,61 @@
+<app-header [navbarBrandRouterLink]="['/admin/dashboard']" [fixed]="true"
+  [navbarBrandFull]="{src: 'assets/images/logo.png', width: '90%', alt: 'B4Bfactory'}"
+  [navbarBrandMinimized]="{src: 'assets/img/brand/sygnet.svg', width: 30, height: 30, alt: 'B4Bfactory Logo'}"
+  [sidebarToggler]="'lg'" [asideMenuToggler]="false">
+
+  <ul class="nav navbar-nav ml-auto">
+    <li class="nav-item dropdown" dropdown placement="bottom right">
+      <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"
+        dropdownToggle (click)="false">
+        <span class="user-account">
+          <img *ngIf="!userDetails?.profile_pic" src="assets/img/avatars/7.jpg" class="img-avatar"
+            alt="admin_profile_pic" />
+          <img *ngIf="userDetails?.profile_pic" class="img-avatar" [src]="backendUrl+userDetails?.profile_pic">
+        </span>
+      </a>
+      <div class="dropdown-menu dropdown-menu-right" *dropdownMenu aria-labelledby="simple-dropdown">
+        <div class="dropdown-header text-center">
+          <strong>Account</strong>
+        </div>
+        <a class="dropdown-item" [routerLink]="['/', 'admin', 'user', 'my-profile']">
+          <i class="fa fa-user"></i>
+          My Profile
+        </a>
+        <!-- [routerLink]="['/', 'auth', 'logout']" [queryParams]="{redir: 'admin'}" -->
+        <a class="dropdown-item" [routerLink]="['/', 'auth', 'logout']" [queryParams]="{redir: 'admin'}">
+          <i class="fa fa-lock"></i>
+          Logout
+        </a>
+      </div>
+    </li>
+  </ul>
+
+</app-header>
+
+<div class="app-body">
+  <app-sidebar #appSidebar [fixed]="true" [display]="'lg'" [minimized]="sidebarMinimized"
+    (minimizedChange)="toggleMinimize($event)">
+    <app-sidebar-nav [navItems]="navItems" [perfectScrollbar] [disabled]="appSidebar.minimized"></app-sidebar-nav>
+    <app-sidebar-minimizer></app-sidebar-minimizer>
+  </app-sidebar>
+
+  <!-- Main content -->
+  <main class="main">
+    <div class="container-fluid">
+      <router-outlet></router-outlet>
+    </div><!-- /.container-fluid -->
+  </main>
+</div>
+
+<app-footer>
+  <span>
+    <div>
+      <strong>Copyright © 2020
+        <a href="javascript:void(0);">
+          B4Bfactory
+        </a>
+      </strong> All Rights Reserved. </div>
+
+    <!-- <a href="javascript:void(0);">B4Bfactory</a> &copy; 2020 -->
+  </span>
+</app-footer>

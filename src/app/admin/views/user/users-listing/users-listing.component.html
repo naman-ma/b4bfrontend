@@ -1,0 +1,152 @@
+<div class="animated fadeIn mt-4">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <span class="head text-capitalize">
+            Users Listing
+          </span>
+          <!-- <button class="btn btn-primary pull-right btn-sm" (click)="viewModal(addEdit, 'add')">
+            <i class="fa fa-plus"></i>
+            Add
+          </button> -->
+        </div>
+        <div class="card-body">
+          <div class="row">
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <div class="search-container">
+                  <input placeholder="Search .." (keyup)="searchByKeyword($event)" (keyup.enter)="getSearchedUser()"
+                    type="text" class="form-control col-md-4">
+                  <button class="btn-success" (click)="getSearchedUser()">
+                    <i class="fa fa-search"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="responsive-table">
+              <table border="0" cellspacing="0" cellpadding="0">
+                <thead class="text-primary">
+                  <tr>
+                    <th>S. No.</th>
+                    <th (click)="sortBy('first_name', sort.order === 'asc' ? 'desc' : 'asc')">
+                      First Name
+                      <i
+                        class="fa fa-caret{{sort.order === 'asc' && sort.field === 'first_name' ? '-down' : '-up'}}"></i>
+                    </th>
+
+                    <th (click)="sortBy('last_name', sort.order === 'asc' ? 'desc' : 'asc')">
+                      Last Name
+                      <i
+                        class="fa fa-caret{{sort.order === 'asc' && sort.field === 'last_name' ? '-down' : '-up'}}"></i>
+                    </th>
+
+                    <th (click)="sortBy('email', sort.order === 'asc' ? 'desc' : 'asc')">
+                      Email
+                      <i class="fa fa-caret{{sort.order === 'asc' && sort.field === 'email' ? '-down' : '-up'}}"></i>
+                    </th>
+
+                    <th (click)="sortBy('created_at', sort.order === 'asc' ? 'desc' : 'asc')">
+                      Created at
+                      <i
+                        class="fa fa-caret{{sort.order === 'asc' && sort.field === 'created_at' ? '-down' : '-up'}}"></i>
+                    </th>
+
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr *ngFor="let user of allUsers;let i = index;">
+                    <td>{{i+1}}</td>
+                    <td>{{user?.first_name}}</td>
+                    <td>{{user?.last_name}}</td>
+                    <td>{{user?.email}}</td>
+                    <td>{{user?.createdAt | date: 'medium'}}</td>
+                    <td>
+                      <button class="btn btn-theme btn-sm pointer-cursor-hover" data-original-title="View"
+                        (click)="getUserDetails(user)">
+                        View Details
+                      </button>
+                    </td>
+                  </tr>
+
+                  <!-- if table contains no rows i.e, no data then this tr will be shown -->
+                  <tr [hidden]="!noRows">
+                    <td colspan="12">
+                      <p class="center-align">No records found</p>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Pagination for the table start -->
+<div *ngIf="!noRows">
+
+  <div class="col-md-6">
+    <nav aria-label="Page navigation example" *ngIf="!noRows" class="mt-3 custom-pagination">
+      <ul class="pagination">
+        <li class="page-item">
+          <a class="page-link" href="javascript:void(0);" aria-label="Previous"
+            [ngClass]="{'disabled': currentPage <= 1}" (click)="back()" tabindex="-1">
+            <span aria-hidden="true">
+              Previous </span> </a> </li>
+        <li class="page-item">
+          <a class="page-link" style="pointer-events: none;">
+            Page {{currentPage}} of {{pages}}
+          </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" aria-label="Next" href="javascript:void(0);"
+            [ngClass]="{'disabled': currentPage >= pages}" (click)="next()">
+            <span aria-hidden="true"> Next </span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+
+  <div class="pagination__goto float-right">
+    <label> Go to page:</label>
+    <input type="number" class="form-control col-md-1 col-sm-1 input-goto" [(ngModel)]="goToPage"
+      (keyup.enter)="getPage()" min="1">
+    <button class="btn btn-success" (click)="getPage()">
+      Go
+    </button>
+  </div>
+</div>
+<!-- Pagination for the table end -->
+
+
+<!-- <nav aria-label="Page navigation example" *ngIf="allUsers?.length" class="mt-3 custom-pagination">
+  <ul class="pagination">
+    <li class="page-item">
+      <a class="page-link" href="javascript:void(0);" aria-label="Previous" [class.disabled]="arrowLeftDisable"
+        [class.btn-primary]="!arrowLeftDisable" (click)="prevRecords()" tabindex="-1">
+        <span aria-hidden="true">
+          < </span> </a> </li>
+    <li class="page-item">
+      <a class="page-link" style="pointer-events: none;">
+        {{initialRecordCount}} - {{lastRecordCount}} of {{totalCount}}
+      </a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" aria-label="Next" href="javascript:void(0);" [class.disabled]="arrowRightDisable"
+        [class.btn-primary]="!arrowRightDisable" (click)="nextRecords()">
+        <span aria-hidden="true"> > </span>
+      </a>
+    </li>
+  </ul>
+</nav> -->

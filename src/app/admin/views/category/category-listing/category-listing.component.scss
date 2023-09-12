@@ -1,0 +1,39 @@
+.custom-pagination .pagination li a.disabled {
+  pointer-events: none;
+  color: #a2a2a2;
+}
+
+.custom-pagination .pagination li a {
+  color: #000;
+}
+
+.custom-pagination .pagination li a:not([href]):not([tabindex]) {
+  color: #000;
+}
+
+.disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.item-page-pagination label {
+  display: inline-block;
+}
+
+.item-page-pagination .go-to {
+  display: inline-block;
+  width: 76px;
+  margin-left: 5px;
+}
+
+.pagination__goto.float-right {
+  margin-top: -52px;
+}
+
+.pagination__goto .input-goto {
+  display: inline;
+}
+
+.capital {
+  text-transform: capitalize;
+}

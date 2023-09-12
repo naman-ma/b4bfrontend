@@ -1,0 +1,31 @@
+.add-product-sec {
+    padding: 35px 0px 45px;
+    border-bottom: 2px solid #12ad9b;
+    @media screen and (max-width: 1199px) {
+        padding: 30px 0px;
+    }
+}
+.select_country {
+    max-width: 225px;
+    margin-top: 15px;
+    margin-left: 40px;
+}
+.inline_file_upl {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #12ad9b;
+}
+.inline_file_upl:last-child {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    border-bottom: none;
+}
+.prod_dimesions h4 {
+    font-size: 20px;
+    color: #1b1b1b;
+    font-weight: normal;
+    margin-bottom: 15px;
+    @media screen and (max-width: 1199px) {
+        font-size: 18px;
+    }
+}

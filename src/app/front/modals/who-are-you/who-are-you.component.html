@@ -1,0 +1,88 @@
+<ng-template let-modal #OpenWhoAreYouModal let-c="close" let-d="dismiss">
+
+  <!-- The Modal -->
+  <!-- <div class="modal fade custom-popup"id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content"> -->
+
+  <!-- Modal Header -->
+  <div class="modal-header">
+    <h4 class="main-heading">First time here?
+      <span>Proceed with below any one option !</span>
+    </h4>
+    <!-- <button type="button" class="close" data-dismiss="modal">x</button> -->
+    <button type="button" class="close" aria-label="Close" (click)="close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <!-- Modal body -->
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="popup-block">
+          <div class="popup-imgthumb">
+            <figure>
+              <img src="assets/images/manufactures.png" alt="Manufacturers">
+            </figure>
+          </div>
+          <div class="custom-radiobtn">
+            <div class="radio-btn">
+              <input type="radio" id="input-11" name="pop-category" value="manufacturer"
+                (change)="onSelectionChange($event)">
+              <label for="input-11">Manufacturers </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="popup-block">
+          <div class="popup-imgthumb">
+            <figure>
+              <img src="assets/images/distributors.png" alt="Distributors">
+            </figure>
+          </div>
+          <div class="custom-radiobtn">
+            <div class="radio-btn">
+              <input type="radio" id="input-12" name="pop-category" value="distributor"
+                (change)="onSelectionChange($event)">
+              <label for="input-12">Distributors </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="popup-block">
+          <div class="popup-imgthumb">
+            <figure>
+              <img src="assets/images/speciality.png" alt="Specialists">
+            </figure>
+          </div>
+          <div class="custom-radiobtn">
+            <div class="radio-btn">
+              <input type="radio" id="input-13" name="pop-category" value="specialist"
+                (change)="onSelectionChange($event)">
+              <label for="input-13">Specialists </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal footer -->
+  <div class="text-center">
+    <button type="button" class="btn btn-theme" data-dismiss="modal" (click)="goToSignupPage()">Start</button>
+    <!-- <button type="submit" class="btn btn-round  btn-primary">
+            Add
+          </button>
+          <button type="button" class="btn btn-round btn-danger" (click)="close()">
+            Cancel
+          </button> -->
+  </div>
+
+  <!-- </div>
+    </div>
+  </div> -->
+
+</ng-template>

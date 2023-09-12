@@ -1,0 +1,201 @@
+<div class="animated fadeIn mt-4">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    <span class="head text-capitalize">
+                        My Profile
+                    </span>
+                    <div class="pull-right">
+                        <div class="btn-group btn-group-primary btn-group-sm" dropdown>
+                            <button id="button-animated" dropdownToggle type="button"
+                                class="btn btn-secondary dropdown-toggle" aria-controls="dropdown-animated">
+                                <span class="fa fa-wrench"></span>
+                                <span class="caret"></span>
+                            </button>
+                            <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu lft-dropdown" role="menu"
+                                aria-labelledby="button-animated">
+                                <li role="menuitem">
+                                    <a class="dropdown-item" href="javascript:void(0)" (click)="viewModal(setting)">
+                                        Change password
+                                    </a>
+                                </li>
+                                <li role="menuitem">
+                                    <a class="dropdown-item" href="javascript:void(0)" (click)="viewModal(edit)">
+                                        Edit Profile
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-3">
+                            <b>Profile Picture: </b>
+                            <br />
+                            <!-- <i class="fa fa-user-o text-muted placeholder-image"></i> -->
+                            <span class="user-img">
+                                <img *ngIf="!userDetails?.profile_pic" src="../../../../../assets/images/user.jpg">
+                                <img *ngIf="userDetails?.profile_pic" class="pointer-cursor-hover"
+                                    [src]="backendUrl+userDetails?.profile_pic" (click)="openProfilePic()">
+                            </span>
+                        </div>
+                        <div class="col-9">
+                            <div class="user-details row mb-4">
+                                <div class="col">
+                                    <b>First Name: </b>
+                                    <span>{{ userDetails?.first_name && userDetails?.first_name !== 'null' ? userDetails?.first_name: 'NA'}}</span>
+                                </div>
+                                <div class="col">
+                                    <b>Last Name: </b>
+                                    <span>
+                                        {{ userDetails?.last_name && userDetails?.last_name !== 'null' ? userDetails?.last_name: 'NA'}}
+                                    </span>
+                                </div>
+                                <div class="col">
+                                    <b>Email: </b>
+                                    <span> {{ userDetails?.email }}</span>
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class="col">
+                                    <b>Phone: </b>
+                                    <span class="text-capitalize">
+                                        {{ userDetails?.mobile && userDetails?.mobile !== 'null' ? userDetails?.mobile: 'NA'}}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class="col">
+                                    <div class="set-change">
+                                        <!-- <button class="btn btn-round m-2" (click)="ViewModal(edit)">
+                                            Update Profile
+                                        </button>
+                                        <button class="btn btn-round btn-primary" (click)="ViewModal(setting)">
+                                            Change Password
+                                        </button> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Update Profile -->
+<ng-template #edit let-modal>
+    <div class="modal-header">
+
+        <h4>EDIT PROFILE</h4>
+
+        <button type="button" class="close" aria-label="Close" (click)="close()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div id="contentToConvert" class="modal-body">
+        <div class="card-chart">
+            <div class="registreation-page container">
+                <div>
+                    <form [formGroup]="updateProfileForm" (ngSubmit)="updateProfile()" autocomplete="off">
+                        <div class="form-group">
+                            <label>First name</label>
+                            <input name="name" type="text" class="form-control" formControlName="first_name">
+                        </div>
+                        <div class="form-group">
+                            <label>Last name</label>
+                            <input name="name" type="text" class="form-control" formControlName="last_name">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="number" name="phone" class="form-control no-arrow" formControlName="mobile">
+
+                            <span class="alert alert-danger mt-2"
+                                *ngIf="isValidUpdateProfileSubmitted && updateProfileForm.value['mobile'] && updateProfileForm.value['mobile'].toString().length < 12">
+                                Phone length should be more than or equal to 12.
+                            </span>
+                        </div>
+                        <!-- <div class="form-group">
+                            <label>Address</label>
+                            <input name="address" type="text" class="form-control" formControlName="address">
+                        </div> -->
+                        <div class="form-group">
+                            <label>Profile Pic</label>
+                            <img class="profile-pic-update" *ngIf="!selectedPicture"
+                                [src]="backendUrl+userDetails?.profile_pic" alt="">
+                            <img class="profile-pic-update" *ngIf="selectedPicture" [src]="selectedPicture" alt="">
+                            <div class="file-drag-drop">
+                                <div class="text-center">
+                                    <img src="assets/images/icon-img.png">
+                                    <p>Drag & Drop Files Here</p>
+                                </div>
+                                <span class="mx-3">OR</span>
+                                <div class="browseFile">
+                                    <input type="file" name="profile_pic" class="form-control mt-2"
+                                        formControlName="profile_pic" (change)="onFileUpload($event)" accept="image/*">
+                                    <label>Browse Files</label>
+                                </div>
+                                <div class="property-photos" *ngIf="profilePicture">
+                                    <p><b> Picture selected:</b> {{ profilePicture?.name }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-round  btn-primary">Update</button>
+                            <button type="button" class="btn btn-round btn-danger" (click)="close()">
+                                Cancel
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<!-- Change Password -->
+<ng-template #setting let-modal>
+    <div class="modal-header">
+        <h4>Change Password</h4>
+        <button type="button" class="close" aria-label="Close" (click)="close()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div id="contentToConvert" class="modal-body">
+        <div class="card card-chart">
+            <div class="card-body registreation-page container">
+                <div>
+                    <div class="form-group">
+                        <label>Old Password</label>
+                        <input type="password" name="old_password" class="form-control" [(ngModel)]="oldPassword"
+                            autocomplete="false">
+                    </div>
+                    <div class="form-group">
+                        <label>New Password</label>
+                        <input type="password" name="new_password" class="form-control" [(ngModel)]="newPassword"
+                            autocomplete="false">
+                    </div>
+                    <div class="form-group">
+                        <label>Confirm New Password</label>
+                        <input type="password" name="confirm_password" class="form-control"
+                            [(ngModel)]="confirmPassword" autocomplete="false">
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-round btn-primary"
+                            (click)="changePassword(oldPassword,newPassword,confirmPassword)">
+                            Update
+                        </button>
+                        <button type="button" class="btn btn-round btn-danger" (click)="close()">
+                            Cancel
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>

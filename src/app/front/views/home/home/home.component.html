@@ -1,0 +1,1164 @@
+<section class="top-slider">
+  <!-- [items]="images" -->
+  <owl-carousel [options]="SlideOptions" [carouselClasses]="['owl-theme', 'sliding']">
+    <div class="item" *ngFor="let item of sliderContent">
+      <div class="row no-gutters">
+        <div class="col-5 d-flex align-items-center">
+          <div class="banner-capt">
+            <div class="bnr-captBox">
+              <h3>{{ item.title }}</h3>
+              <h2>{{ item.subtitle }}</h2>
+              <p>{{ item.desc }}</p>
+              <div class="read-more">
+                <a class="btn btn-theme" data-toggle="modal" data-target="#myModal" href="javascript:void(0);">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-7">
+          <div class="banner-img">
+            <img src="{{ item.url }}" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </owl-carousel>
+
+
+</section>
+
+<section class="brands-wrap sec-block">
+  <div class="container">
+    <ul class="d-flex flex-wrap justify-content-center align-items-center">
+      <li>
+        <a href="#">
+          <img src="assets/images/brand-logo1.png" />
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="assets/images/brand-logo2.png" />
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="assets/images/brand-logo3.png" />
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="assets/images/brand-logo4.png" />
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="assets/images/brand-logo5.png" />
+        </a>
+      </li>
+    </ul>
+    <div class="brands-search-wrap pt-5">
+      <h2 class="title-head pb-md-3">Shop amongst X products online</h2>
+      <div class="product-search">
+        <form class="d-flex align-items-center">
+          <input type="text" class="form-control" placeholder="Search for Brand , Category , Product..." />
+          <button class="btn btn-theme">Search</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="shopBy-speciality sec-block">
+  <div class="container">
+    <h2 class="title-head">Shop By specialty</h2>
+    <p class="title-content">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam suscipit venenatis molestie. Proin commodo volutpat mi
+    </p>
+    <div class="row justify-content-center">
+      <div class="col-xl-9">
+        <ul class="specialty-list d-flex flex-wrap justify-content-center">
+          <li class="specialty-items">
+            <figure>
+              <img src="assets/images/spec-img1.png" alt="" />
+            </figure>
+            <h4>Radiology</h4>
+          </li>
+          <li class="specialty-items">
+            <figure>
+              <img src="assets/images/spec-img2.png" alt="" />
+            </figure>
+            <h4>Orthopedic</h4>
+          </li>
+          <li class="specialty-items">
+            <figure>
+              <img src="assets/images/spec-img3.png" alt="" />
+            </figure>
+            <h4>Medical technology</h4>
+          </li>
+          <li class="specialty-items">
+            <figure>
+              <img src="assets/images/spec-img4.png" alt="" />
+            </figure>
+            <h4>Anesthesiology</h4>
+          </li>
+          <li class="specialty-items">
+            <figure>
+              <img src="assets/images/spec-img5.png" alt="" />
+            </figure>
+            <h4>Cardiovascular</h4>
+          </li>
+          <li class="specialty-items">
+            <figure>
+              <img src="assets/images/spec-img6.png" alt="" />
+            </figure>
+            <h4>Neurology</h4>
+          </li>
+          <li class="specialty-items">
+            <figure>
+              <img src="assets/images/spec-img7.png" alt="" />
+            </figure>
+            <h4>Wellness</h4>
+          </li>
+          <li class="specialty-items">
+            <figure>
+              <img src="assets/images/spec-img8.png" alt="" />
+            </figure>
+            <h4>Immunology</h4>
+          </li>
+          <li class="specialty-items">
+            <figure>
+              <img src="assets/images/spec-img9.png" alt="" />
+            </figure>
+            <h4>Dental</h4>
+          </li>
+          <li class="specialty-items">
+            <figure>
+              <img src="assets/images/spec-img10.png" alt="" />
+            </figure>
+            <h4>General Hospital</h4>
+          </li>
+        </ul>
+        <div class="text-center">
+          <button class="btn btn-theme">And More...</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="latest-products sec-block">
+  <div class="container">
+    <div class="heading-select">
+      <h2 class="title-head">Our Latest Products</h2>
+      <p class="title-content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam suscipit venenatis molestie. Proin commodo volutpat mi
+      </p>
+      <select class="select-field form-control">
+        <option>Select by Specialty</option>
+        <option>option 1</option>
+      </select>
+    </div>
+    <ul class="product-list d-flex flex-wrap">
+      <li>
+        <div class="product-item">
+          <figure>
+            <img src="assets/images/microscope.jpg" />
+          </figure>
+          <h4 class="p-title">Microscope</h4>
+          <span class="new-tag">New</span>
+          <div class="p-hover-item">
+            <ul class="d-flex justify-content-center">
+              <li>
+                <a href="#">
+                  <img src="assets/images/icon-edit.png" />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="assets/images/icon-quote.png" />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="assets/images/icon-phone.png" />
+                </a>
+              </li>
+            </ul>
+            <a class="flag-bottom" href="#">
+              <img src="assets/images/flag-1.png" />
+            </a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="product-item">
+          <figure>
+            <img src="assets/images/microscope2.jpg" />
+          </figure>
+          <h4 class="p-title">Microscope</h4>
+          <div class="p-hover-item">
+            <ul class="d-flex justify-content-center">
+              <li>
+                <a href="#">
+                  <img src="assets/images/icon-edit.png" />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="assets/images/icon-quote.png" />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="assets/images/icon-phone.png" />
+                </a>
+              </li>
+            </ul>
+            <a class="flag-bottom" href="#">
+              <img src="assets/images/flag-1.png" />
+            </a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="product-item">
+          <figure>
+            <img src="assets/images/temp-device.jpg" />
+          </figure>
+          <h4 class="p-title">
+            <img src="assets/images/spec-img6.png" /> Temperature device
+          </h4>
+          <div class="p-hover-item">
+            <ul class="d-flex justify-content-center">
+              <li>
+                <a href="#">
+                  <img src="assets/images/icon-edit.png" />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="assets/images/icon-quote.png" />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="assets/images/icon-phone.png" />
+                </a>
+              </li>
+            </ul>
+            <a class="flag-bottom" href="#">
+              <img src="assets/images/flag-1.png" />
+            </a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="product-item">
+          <figure>
+            <img src="assets/images/eye-euipment.jpg" />
+          </figure>
+          <h4 class="p-title">Eye equipment</h4>
+          <div class="p-hover-item">
+            <ul class="d-flex justify-content-center">
+              <li>
+                <a href="#">
+                  <img src="assets/images/icon-edit.png" />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="assets/images/icon-quote.png" />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="assets/images/icon-phone.png" />
+                </a>
+              </li>
+            </ul>
+            <a class="flag-bottom" href="#">
+              <img src="assets/images/flag-1.png" />
+            </a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="product-item">
+          <figure>
+            <img src="assets/images/capicola-shoulde.jpg" />
+          </figure>
+          <h4 class="p-title">
+            <img src="assets/images/spec-img9.png" />Capicola shoulde
+          </h4>
+          <span class="new-tag">New</span>
+          <div class="p-hover-item">
+            <ul class="d-flex justify-content-center">
+              <li>
+                <a href="#">
+                  <img src="assets/images/icon-edit.png" />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="assets/images/icon-quote.png" />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="assets/images/icon-phone.png" />
+                </a>
+              </li>
+            </ul>
+            <a class="flag-bottom" href="#">
+              <img src="assets/images/flag-1.png" />
+            </a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="product-item">
+          <figure>
+            <img src="assets/images/Picanha-irure.jpg" />
+          </figure>
+          <h4 class="p-title">Picanha irure</h4>
+          <span class="new-tag">New</span>
+          <div class="p-hover-item">
+            <ul class="d-flex justify-content-center">
+              <li>
+                <a href="#">
+                  <img src="assets/images/icon-edit.png" />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="assets/images/icon-quote.png" />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="assets/images/icon-phone.png" />
+                </a>
+              </li>
+            </ul>
+            <a class="flag-bottom" href="#">
+              <img src="assets/images/flag-1.png" />
+            </a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="product-item">
+          <figure>
+            <img src="assets/images/Capicola-proident.jpg" />
+          </figure>
+          <h4 class="p-title">Capicola proident</h4>
+          <span class="new-tag">New</span>
+          <div class="p-hover-item">
+            <ul class="d-flex justify-content-center">
+              <li>
+                <a href="#">
+                  <img src="assets/images/icon-edit.png" />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="assets/images/icon-quote.png" />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="assets/images/icon-phone.png" />
+                </a>
+              </li>
+            </ul>
+            <a class="flag-bottom" href="#">
+              <img src="assets/images/flag-1.png" />
+            </a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="product-item">
+          <figure>
+            <img src="assets/images/Proident-aliquip.jpg" />
+          </figure>
+          <h4 class="p-title">Proident aliquip</h4>
+          <span class="new-tag">New</span>
+          <div class="p-hover-item">
+            <ul class="d-flex justify-content-center">
+              <li>
+                <a href="#">
+                  <img src="assets/images/icon-edit.png" />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="assets/images/icon-quote.png" />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="assets/images/icon-phone.png" />
+                </a>
+              </li>
+            </ul>
+            <a class="flag-bottom" href="#">
+              <img src="assets/images/flag-1.png" />
+            </a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="best-sellers sec-block">
+  <div class="container">
+    <div class="heading-select">
+      <h2 class="title-head">Our Best Sellers</h2>
+      <p class="title-content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam suscipit venenatis molestie. Proin commodo volutpat mi
+      </p>
+      <select class="select-field form-control">
+        <option>Select by Specialty</option>
+        <option>option 1</option>
+      </select>
+    </div>
+    <ul class="product-list d-flex flex-wrap">
+      <li>
+        <div class="product-item">
+          <div class="price-header">
+            <div class="price">$ 75.00</div>
+            <div class="rating">
+              <ul>
+                <li>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star-o" aria-hidden="true"></i>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <figure>
+            <img src="assets/images/Occaecat-irure.jpg" />
+          </figure>
+          <h4 class="p-title">Occaecat irure</h4>
+          <div class="p-hover-item">
+            <div>
+              <ul class="d-flex justify-content-center">
+                <li>
+                  <a href="#">
+                    <img src="assets/images/icon-edit.png" />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="assets/images/icon-flag.png" />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="assets/images/icon-phone.png" />
+                  </a>
+                </li>
+              </ul>
+              <a href="#" class="btn btn-theme">Buy Now</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="product-item">
+          <div class="price-header">
+            <div class="price">$ 75.00</div>
+            <div class="rating">
+              <ul>
+                <li>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star-o" aria-hidden="true"></i>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <figure>
+            <img src="assets/images/Officia-kielbasa.jpg" />
+          </figure>
+          <h4 class="p-title">
+            <img src="assets/images/spec-img4.png" />Officia kielbasa
+          </h4>
+          <div class="p-hover-item">
+            <div>
+              <ul class="d-flex justify-content-center">
+                <li>
+                  <a href="#">
+                    <img src="assets/images/icon-edit.png" />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="assets/images/icon-flag.png" />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="assets/images/icon-phone.png" />
+                  </a>
+                </li>
+              </ul>
+              <a href="#" class="btn btn-theme">Buy Now</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="product-item">
+          <div class="price-header">
+            <div class="price">$ 75.00</div>
+            <div class="rating">
+              <ul>
+                <li>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star-o" aria-hidden="true"></i>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <figure>
+            <img src="assets/images/Mignon-eiusmo.jpg" />
+          </figure>
+          <h4 class="p-title">
+            Mignon eiusmo
+          </h4>
+          <div class="p-hover-item">
+            <div>
+              <ul class="d-flex justify-content-center">
+                <li>
+                  <a href="#">
+                    <img src="assets/images/icon-edit.png" />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="assets/images/icon-flag.png" />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="assets/images/icon-phone.png" />
+                  </a>
+                </li>
+              </ul>
+              <a href="#" class="btn btn-theme">Buy Now</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="product-item">
+          <div class="price-header">
+            <div class="price">$ 75.00</div>
+            <div class="rating">
+              <ul>
+                <li>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star-o" aria-hidden="true"></i>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <figure>
+            <img src="assets/images/Tausage-hambur.jpg" />
+          </figure>
+          <h4 class="p-title">Tausage hambur</h4>
+          <div class="p-hover-item">
+            <div>
+              <ul class="d-flex justify-content-center">
+                <li>
+                  <a href="#">
+                    <img src="assets/images/icon-edit.png" />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="assets/images/icon-flag.png" />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="assets/images/icon-phone.png" />
+                  </a>
+                </li>
+              </ul>
+              <a href="#" class="btn btn-theme">Buy Now</a>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="Medical-tradeshow sec-block">
+  <div class="container">
+    <div class="heading-select">
+      <h2 class="title-head">Medical tradeshow</h2>
+      <p class="title-content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam suscipit venenatis molestie. Proin commodo volutpat mi
+      </p>
+      <select class="select-field form-control">
+        <option>Select by Specialty</option>
+        <option>option 1</option>
+      </select>
+    </div>
+    <ul class="product-list d-flex flex-wrap">
+      <li>
+        <div class="product-item">
+          <div class="price-header">
+            <div class="price">$ 75.00</div>
+            <div class="rating">
+              <ul>
+                <li>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star-o" aria-hidden="true"></i>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <figure>
+            <img src="assets/images/Occaecat-irure.jpg" />
+          </figure>
+          <h4 class="p-title">Occaecat irure</h4>
+          <div class="p-hover-item">
+            <div>
+              <ul class="d-flex justify-content-center">
+                <li>
+                  <a href="#">
+                    <img src="assets/images/icon-edit.png" />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="assets/images/icon-flag.png" />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="assets/images/icon-phone.png" />
+                  </a>
+                </li>
+              </ul>
+              <a href="#" class="btn btn-theme">Buy Now</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="product-item">
+          <div class="price-header">
+            <div class="price">$ 75.00</div>
+            <div class="rating">
+              <ul>
+                <li>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star-o" aria-hidden="true"></i>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <figure>
+            <img src="assets/images/Officia-kielbasa.jpg" />
+          </figure>
+          <h4 class="p-title">
+            <img src="assets/images/spec-img4.png" />Officia kielbasa
+          </h4>
+          <div class="p-hover-item">
+            <div>
+              <ul class="d-flex justify-content-center">
+                <li>
+                  <a href="#">
+                    <img src="assets/images/icon-edit.png" />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="assets/images/icon-flag.png" />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="assets/images/icon-phone.png" />
+                  </a>
+                </li>
+              </ul>
+              <a href="#" class="btn btn-theme">Buy Now</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="product-item">
+          <div class="price-header">
+            <div class="price">$ 75.00</div>
+            <div class="rating">
+              <ul>
+                <li>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star-o" aria-hidden="true"></i>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <figure>
+            <img src="assets/images/Mignon-eiusmo.jpg" />
+          </figure>
+          <h4 class="p-title">
+            Mignon eiusmo
+          </h4>
+          <div class="p-hover-item">
+            <div>
+              <ul class="d-flex justify-content-center">
+                <li>
+                  <a href="#">
+                    <img src="assets/images/icon-edit.png" />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="assets/images/icon-flag.png" />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="assets/images/icon-phone.png" />
+                  </a>
+                </li>
+              </ul>
+              <a href="#" class="btn btn-theme">Buy Now</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="product-item">
+          <div class="price-header">
+            <div class="price">$ 75.00</div>
+            <div class="rating">
+              <ul>
+                <li>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star-o" aria-hidden="true"></i>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <figure>
+            <img src="assets/images/Tausage-hambur.jpg" />
+          </figure>
+          <h4 class="p-title">Tausage hambur</h4>
+          <div class="p-hover-item">
+            <div>
+              <ul class="d-flex justify-content-center">
+                <li>
+                  <a href="#">
+                    <img src="assets/images/icon-edit.png" />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="assets/images/icon-flag.png" />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="assets/images/icon-phone.png" />
+                  </a>
+                </li>
+              </ul>
+              <a href="#" class="btn btn-theme">Buy Now</a>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="Medical-news sec-block">
+  <div class="container">
+    <div class="heading-select">
+      <h2 class="title-head">Medical News by Specialty</h2>
+      <p class="title-content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam suscipit venenatis molestie. Proin commodo volutpat mi
+      </p>
+      <select class="select-field form-control">
+        <option>Select by Specialty</option>
+        <option>option 1</option>
+      </select>
+    </div>
+    <ul class="product-list d-flex flex-wrap">
+      <li>
+        <div class="product-item">
+          <figure>
+            <img src="assets/images/madical-news1.jpg" />
+          </figure>
+          <div class="medical-new-disc">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam suscipit venenatis mole.</p>
+            <div class="disc-bottom">
+              <div class="pull-left">
+                <img alt="" src="assets/images/spec-img5.png">
+              </div>
+              <div class="pull-right">
+                <button class="btn btn-theme">Read</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-hover-item">
+            <div>
+              <ul class="d-flex justify-content-center">
+                <li>
+                  <a href="#">
+                    <img src="assets/images/icon-edit.png" />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="assets/images/icon-flag.png" />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="assets/images/icon-phone.png" />
+                  </a>
+                </li>
+              </ul>
+              <a href="#" class="btn btn-theme">Buy Now</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="product-item">
+          <figure>
+            <img src="assets/images/madical-news2.jpg" />
+          </figure>
+          <div class="medical-new-disc">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam suscipit venenatis mole.</p>
+            <div class="disc-bottom">
+              <div class="pull-left">
+                <img alt="" src="assets/images/spec-img9.png">
+              </div>
+              <div class="pull-right">
+                <button class="btn btn-theme">Read</button>
+              </div>
+            </div>
+          </div>
+          <div class="p-hover-item">
+            <div>
+              <ul class="d-flex justify-content-center">
+                <li>
+                  <a href="#">
+                    <img src="assets/images/icon-edit.png" />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="assets/images/icon-flag.png" />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="assets/images/icon-phone.png" />
+                  </a>
+                </li>
+              </ul>
+              <a href="#" class="btn btn-theme">Buy Now</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="product-item">
+          <figure>
+            <img src="assets/images/madical-news3.jpg" />
+          </figure>
+          <div class="medical-new-disc">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam suscipit venenatis mole.</p>
+            <div class="disc-bottom">
+              <div class="pull-left">
+                <img alt="" src="assets/images/spec-img4.png">
+              </div>
+              <div class="pull-right">
+                <button class="btn btn-theme">Read</button>
+              </div>
+            </div>
+          </div>
+          <div class="p-hover-item">
+            <div>
+              <ul class="d-flex justify-content-center">
+                <li>
+                  <a href="#">
+                    <img src="assets/images/icon-edit.png" />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="assets/images/icon-flag.png" />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="assets/images/icon-phone.png" />
+                  </a>
+                </li>
+              </ul>
+              <a href="#" class="btn btn-theme">Buy Now</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="product-item">
+          <figure>
+            <img src="assets/images/madical-news4.jpg" />
+          </figure>
+          <div class="medical-new-disc">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam suscipit venenatis mole.</p>
+            <div class="disc-bottom">
+              <div class="pull-left">
+                <img alt="" src="assets/images/spec-img10.png">
+              </div>
+              <div class="pull-right">
+                <button class="btn btn-theme">Read</button>
+              </div>
+            </div>
+          </div>
+          <div class="p-hover-item">
+            <div>
+              <ul class="d-flex justify-content-center">
+                <li>
+                  <a href="#">
+                    <img src="assets/images/icon-edit.png" />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="assets/images/icon-flag.png" />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="assets/images/icon-phone.png" />
+                  </a>
+                </li>
+              </ul>
+              <a href="#" class="btn btn-theme">Buy Now</a>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="stay-home sec-block">
+  <div class="container">
+    <div class="row no-gutters">
+      <div class="col-sm-12 col-lg-6 stay-home-left">
+        <figure>
+          <img src="assets/images/stay-home.jpg" />
+        </figure>
+      </div>
+      <div class="col-sm-12 col-lg-6 stay-home-right">
+        <figure>
+          <img src="assets/images/killing-corona.jpg" />
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="newsletter sec-block">
+  <div class="container">
+    <div class="row justify-content-xl-center">
+      <div class="col-sm-12 col-lg-6">
+        <h2>Medical Newsletter</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam suscipit venenatis molestie. Proin commodo volutpat
+          mi
+        </p>
+      </div>
+      <div class="col-sm-12 col-lg-6">
+        <div class="newsletter-form">
+          <form class="d-flex align-items-center">
+            <select class="select-field form-control">
+              <option>Select Specialty</option>
+              <option>option 1</option>
+            </select>
+            <button class="btn btn-theme">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- The Modal -->
+<div class="modal fade custom-popup" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="main-heading">First time here?
+          <span>Proceed with below any one option !</span>
+        </h4>
+        <button type="button" class="close" data-dismiss="modal">x</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="popup-block">
+              <div class="popup-imgthumb">
+                <figure>
+                  <img src="assets/images/manufactures.png" alt="">
+                </figure>
+              </div>
+              <div class="custom-radiobtn">
+                <div class="radio-btn">
+                  <input type="radio" id="input-11" name="pop-category" checked="">
+                  <label for="input-11">Manufacturers </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="popup-block">
+              <div class="popup-imgthumb">
+                <figure>
+                  <img src="assets/images/distributors.png" alt="">
+                </figure>
+              </div>
+              <div class="custom-radiobtn">
+                <div class="radio-btn">
+                  <input type="radio" id="input-12" name="pop-category">
+                  <label for="input-12">Distributors </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="popup-block">
+              <div class="popup-imgthumb">
+                <figure>
+                  <img src="assets/images/speciality.png" alt="">
+                </figure>
+              </div>
+              <div class="custom-radiobtn">
+                <div class="radio-btn">
+                  <input type="radio" id="input-13" name="pop-category">
+                  <label for="input-13">Specialists </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="text-center">
+        <button type="button" class="btn btn-theme" data-dismiss="modal">Start</button>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,83 @@
+<div class="animated fadeIn mt-4">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <span class="head text-capitalize">
+            {{categoryDetails?.category_name}} Details
+          </span>
+          <div class="pull-right">
+            <div class="btn-group btn-group-primary btn-group-sm" dropdown>
+              <button id="button-animated" dropdownToggle type="button" class="btn btn-secondary dropdown-toggle"
+                aria-controls="dropdown-animated">
+                <span class="fa fa-wrench"></span>
+                <span class="caret"></span>
+              </button>
+              <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu lft-dropdown" role="menu"
+                aria-labelledby="button-animated">
+                <!-- <li role="menuitem">
+                                  <a class="dropdown-item" href="javascript:void(0)"
+                                      (click)="viewModal(updateUserRole)">Update Roles</a>
+                              </li> 
+                              <li role="menuitem">
+                                  <a class="dropdown-item" href="javascript:void(0)"
+                                      (click)="updateAccountStatus(constants.INACTIVE)">Inactive</a>
+                              </li> -->
+                <li role="menuitem">
+                  <a class="dropdown-item" href="javascript:void(0)" (click)="openEditCategoryModal('edit')">
+                    Edit Category
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-body">
+          <div class="row">
+            <div class="col-9">
+              <div class="user-details row mb-4">
+                <div class="col">
+                  <b>Created Date: </b>
+                  <span class="text-capitalize">
+                    <span *ngIf="categoryDetails?.createdAt">{{categoryDetails?.createdAt | date:'medium' }}</span>
+                    <span *ngIf="!categoryDetails?.createdAt"> - </span>
+                  </span>
+                </div>
+                <div class="col">
+                  <b>Parent Category: </b>
+                  <span>{{ categoryDetails?.parent_id ? categoryDetails?.parent_id : 'NA' }}</span>
+                </div>
+              </div>
+
+              <div *ngFor="let category of categoryDetails?.metas">
+                <div class="row mb-4">
+                  <div class="col">
+                    <b>Category Name: </b>
+                    <span>{{ category?.type_value }}</span>
+                  </div>
+
+                  <div class="col">
+                    <b>Category Language: </b>
+                    <span *ngIf="category?.type_option && category?.type_option == 'en' "
+                      class="flag-icon flag-icon-gb">
+                    </span>
+                    <span *ngIf="category?.type_option && category?.type_option == 'fr' "
+                      class="flag-icon flag-icon-fr">
+                    </span>
+                    <span>{{ category?.type_option }}</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-category-add-edit #OpenAddEditCategoryModal></app-category-add-edit>

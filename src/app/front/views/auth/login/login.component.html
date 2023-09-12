@@ -1,0 +1,89 @@
+<section class="banner-innerpage">
+    <figure>
+        <img src="assets/images/inner-banner.jpg" />
+    </figure>
+</section>
+
+<section class="login-page">
+    <div class="container">
+        <h1 class="main-heading">Login</h1>
+        <div class="login-signup-form">
+            <div class="row">
+                <div class="col-md-7 loginform-wrap">
+                    <form [formGroup]="loginForm" (ngSubmit)="login()" class="loginform">
+
+                        <div class="form-group input-group ">
+                            <input class="form-control" type="text" placeholder="Username" formControlName="email" />
+                            <span class="input-group-addon">
+                                <i class="fa fa-user"></i>
+                            </span>
+
+                        </div>
+                        <p class="text-danger"
+                            *ngIf="loginForm.controls.email.touched && loginForm.controls.email.invalid && loginForm.controls.email.errors.required">
+                            This is a required field
+                        </p>
+                        <p class="text-danger"
+                            *ngIf="loginForm.controls.email.touched && loginForm.controls.email.invalid && loginForm.controls.email.errors.email">
+                            This is not a valid email
+                        </p>
+
+
+                        <div class="form-group input-group ">
+                            <input class="form-control" type="password" placeholder="Password"
+                                formControlName="password" />
+                            <span class="input-group-addon">
+                                <i class="fa fa-lock"></i>
+                            </span>
+
+                        </div>
+                        <p class="text-danger"
+                            *ngIf="loginForm.controls.password.touched && loginForm.controls.password.invalid && loginForm.controls.password.errors.required">
+                            This is a required field
+                        </p>
+
+                        <p class="text-danger"
+                            *ngIf="loginForm.controls.password.touched && loginForm.controls.password.invalid && loginForm.controls.password.errors.minlength">
+                            Password should be atleast 6 characters long
+                        </p>
+
+
+                        <div class="form-group clearfix">
+                            <!-- <div class="remember">
+                                <div class="custom-checkbox">
+                                    <div class="checkboxbtn">
+                                        <input type="checkbox" id="checkbox2">
+                                        <label for="checkbox2">Remember me</label>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div class="forgot-password form-group">
+                                <a href="javascript:void(0);" [routerLink]="['/auth/forgot-password']">
+                                    Forgot your password?
+                                </a>
+                            </div>
+                        </div>
+                        <div class="login-btn-group">
+                            <button type="submit" class="btn btn-theme large-btn" [disabled]="loginForm.invalid">
+                                Login
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-5 new-here">
+                    <h3>
+                        <b> NEW HERE?</b>
+                    </h3>
+                    <h3>Registration is free and easy!
+
+
+                    </h3>
+                    <a class="link-green" href="javascript:void(0);" (click)="openModalPopup()">Create an account</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<app-who-are-you #OpenWhoAreYouModal></app-who-are-you>

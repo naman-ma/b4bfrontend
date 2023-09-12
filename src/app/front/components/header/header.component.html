@@ -1,0 +1,150 @@
+<header>
+  <div class="header-top">
+    <div class="container">
+      <div class="head-top-block d-flex flex-wrap flex-lg-nowrap align-items-center justify-content-between">
+        <div class="header-logo">
+          <a class="navbar-brand logo-brand" href="javascript:void(0);">
+            <img src="assets/images/logo.png" alt="b4b-factory" />
+          </a>
+        </div>
+
+        <div *ngIf="!isLoggedIn" class="header-search">
+          <form class="form_inline d-flex">
+            <div class="inline-field header-search__select mr-md-2 mr-0">
+              <select class="select-field form-control">
+                <option value="">Select Specialty</option>
+                <option value="">option 1</option>
+              </select>
+            </div>
+            <div class="inline-field header-search__input">
+              <div class="input-with-icon">
+                <input type="text" class="form-control" placeholder="Enter your keyword.." />
+                <button class="inpIon btn">
+                  <i class="fa fa-search"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="head-credential d-md-flex justify-content-end">
+
+          <div *ngIf="!isLoggedIn" class="login-reg">
+            <ul class="log-reg-list d-inline-flex">
+              <li>
+                <a href="javascript:void(0);" (click)="openModalPopup()">
+                  <i class="fa fa-user"></i> Register</a>
+              </li>
+              <li>
+                <a [routerLink]="['/auth/login']">
+                  <i class="fa fa-lock"></i> Login</a>
+              </li>
+            </ul>
+          </div>
+
+
+
+          <div *ngIf="!isLoggedIn" class="social-cont">
+            <ul class="social-links d-inline-flex">
+              <li>
+                <a href="javascript:void(0);">
+                  <i class="fa fa-facebook"></i>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);">
+                  <i class="fa fa-twitter"></i>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);">
+                  <i class="fa fa-google-plus"></i>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);">
+                  <i class="fa fa-instagram"></i>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);">
+                  <i class="fa fa-linkedin"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="top-rightbar">
+            <div class="lenguage-slct d-inline-flex">
+
+              <select class="select-leng select-field">
+                <option>English</option>
+                <option>French</option>
+              </select>
+
+              <select *ngIf="!isLoggedIn" class="select-curency select-field">
+                <option>USD</option>
+                <option>EUR</option>
+              </select>
+
+            </div>
+
+            <div *ngIf="isLoggedIn" class="notify_block">
+              <div class="dropdown notification">
+                <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+                  <i class="fa fa-bell-o"></i>
+                  <span class="count">2</span>
+                </button>
+                <div class="dropdown-menu">
+                  <ul class="list-unstyled">
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div *ngIf="isLoggedIn" class="header_user d-flex align-items-center">
+
+              <span>
+                Welcome, {{loggedInUserDetails?.first_name}}
+              </span>
+
+              <div class="dropdown">
+
+                <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+                  <span class="user-account">
+
+                    <img *ngIf="!loggedInUserDetails?.profile_pic" src="assets/images/prof_pic.png" alt="profile_pic" />
+
+                    <img *ngIf="loggedInUserDetails?.profile_pic" [src]="backendUrl+loggedInUserDetails?.profile_pic"
+                      alt="profile_pic" />
+
+                  </span>
+                </button>
+
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" [routerLink]="['/', 'settings', 'user', 'profile']">
+                    Settings
+                  </a>
+                  <a class="dropdown-item" [routerLink]="['/', 'auth', 'logout']" [queryParams]="{redir: 'user'}">
+                    Logout
+                  </a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-navigation></app-navigation>
+
+</header>
+
+
+
+<app-who-are-you #OpenWhoAreYouModal></app-who-are-you>

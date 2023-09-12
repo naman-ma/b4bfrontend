@@ -1,0 +1,38 @@
+<div class="animated fadeIn mt-4">
+  <div class="row">
+    <!-- [routerLink]="['/admin/user/list']" -->
+    <div class="col-sm-6 col-md-3 pointer" [routerLink]="['/admin/platform/list']">
+      <div class="card text-white bg-info">
+        <div class="card-body">
+          <div class="h1 text-muted text-right mb-4">
+            <i class="icon-people"></i>
+          </div>
+          <div class="text-value">{{platforms?.length}}</div>
+          <small class="text-muted text-uppercase font-weight-bold">
+            {{platforms?.length == 1 ? 'Total Platform': 'Total Platforms'}}
+          </small>
+          <div class="progress progress-white progress-xs mt-3">
+            <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0"
+              aria-valuemax="100"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="col-sm-6 col-md-3 pointer">
+      <div class="card text-white bg-success">
+        <div class="card-body">
+          <div class="h1 text-muted text-right mb-4">
+            <i class="icon-map"></i>
+          </div>
+          <div class="text-value">10</div>
+          <small class="text-muted text-uppercase font-weight-bold">Total Products</small>
+          <div class="progress progress-white progress-xs mt-3">
+            <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0"
+              aria-valuemax="100"></div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+  </div>
+</div>

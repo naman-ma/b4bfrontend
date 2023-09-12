@@ -1,0 +1,158 @@
+<div class="animated fadeIn mt-4">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <span class="head text-capitalize">
+            {{userDetails?.first_name}} {{userDetails?.last_name}}'s Details
+          </span>
+          <div class="pull-right">
+            <div class="btn-group btn-group-primary btn-group-sm" dropdown>
+              <button id="button-animated" dropdownToggle type="button" class="btn btn-secondary dropdown-toggle"
+                aria-controls="dropdown-animated">
+                <span class="fa fa-wrench"></span>
+                <span class="caret"></span>
+              </button>
+              <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu" role="menu"
+                aria-labelledby="button-animated">
+                <!-- <li role="menuitem">
+                                  <a class="dropdown-item" href="javascript:void(0)"
+                                      (click)="viewModal(updateUserRole)">Update Roles</a>
+                              </li> 
+                              <li role="menuitem">
+                                  <a class="dropdown-item" href="javascript:void(0)"
+                                      (click)="updateAccountStatus(constants.INACTIVE)">Inactive</a>
+                              </li> -->
+                <li role="menuitem">
+                  <a class="dropdown-item" href="javascript:void(0)" (click)="viewModal(warningEmail)">
+                    Send Warning
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="btn-group btn-group-primary btn-group-sm" dropdown>
+              <button id="button-animated" dropdownToggle type="button" class="btn btn-info dropdown-toggle"
+                aria-controls="dropdown-animated">
+                <span class="capital">Status</span>
+                <span class="caret"></span>
+              </button>
+              <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu" role="menu"
+                aria-labelledby="button-animated">
+                <li role="menuitem">
+                  <a class="dropdown-item" href="javascript:void(0)"
+                    (click)="updateAccountStatus(constants.ACTIVE)">Active</a>
+                </li>
+                <li role="menuitem">
+                  <a class="dropdown-item" href="javascript:void(0)"
+                    (click)="updateAccountStatus(constants.SUSPENDED)">Suspend</a>
+                </li>
+                <li role="menuitem">
+                  <a class="dropdown-item" href="javascript:void(0)"
+                    (click)="updateAccountStatus(constants.INACTIVE)">Inactive</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-body">
+          <div class="row">
+            <div class="col-9">
+              <div class="user-details row mb-4">
+                <div class="col">
+                  <b>First Name: </b>
+                  <span>{{ userDetails?.first_name }}</span>
+                </div>
+                <div class="col">
+                  <b>Last Name: </b>
+                  <span>{{ userDetails?.last_name }}</span>
+                </div>
+
+                <!-- <div class="col">
+                                  <b>Roles: </b>
+                                  <span class="badge badge-primary mr-2 text-capitalize"
+                                      *ngFor="let role of userDetails?.roles">{{ role }}</span>
+                              </div> -->
+              </div>
+              <div class="row mb-4">
+                <div class="col">
+                  <b>Email: </b>
+                  <span>{{ userDetails?.email }}</span>
+                </div>
+                <div class="col">
+                  <b>Email Verified: </b>
+                  <span class="text-capitalize">
+                    <i *ngIf="userDetails?.email_verification" class="fa fa-check text-success"></i>
+                    <i *ngIf="!userDetails?.email_verification" class="fa fa-close text-danger"></i>
+                  </span>
+                </div>
+
+              </div>
+              <div class="row mb-4">
+
+                <div class="col">
+                  <b>Joined On: </b>
+                  <span class="text-capitalize">
+                    <span *ngIf="userDetails?.createdAt">{{userDetails?.createdAt | date:'medium' }}</span>
+                    <span *ngIf="!userDetails?.createdAt"> - </span>
+                  </span>
+                </div>
+
+                <div class="col">
+                  <b>Account Status: </b>
+                  <span class="text-capitalize">{{ userDetails?.account_status }}</span>
+                </div>
+                <!-- <div class="col">
+                                  <b>Last Login: </b>
+                                  <span class="text-capitalize">
+                                      <span
+                                          *ngIf="userDetails?.last_logged_in">{{userDetails?.last_logged_in | date:'medium' }}</span>
+                                      <span *ngIf="!userDetails?.last_logged_in"> - </span>
+                                  </span>
+                              </div> -->
+              </div>
+            </div>
+            <div class="user-img col-3">
+              <b>Profile Picture: </b><br />
+              <i *ngIf="!userDetails?.profile_pic" class="fa fa-user-o text-muted placeholder-image"></i>
+              <img *ngIf="userDetails?.profile_pic" class="pointer-cursor-hover"
+                [src]="backendUrl+userDetails?.profile_pic" (click)="openProfilePic()">
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Warning email -->
+<ng-template #warningEmail let-modal>
+  <div class="modal-header">
+    <h4>Warning mail content</h4>
+    <button type="button" class="close" aria-label="Close" (click)="close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div id="contentToConvert" class="modal-body">
+    <div class="card card-chart">
+      <div class="card-body registreation-page container">
+        <div>
+          <div class="form-group">
+            <label>Enter content of mail(optional):</label>
+            <textarea class="form-control" [(ngModel)]="warningEmailContent">
+            </textarea>
+          </div>
+          <div class="form-group">
+            <button type="button" class="btn btn-round btn-primary" (click)="sendUserWarningEmail()">
+              Send
+            </button>
+            <button type="button" class="btn btn-round btn-danger" (click)="close()">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

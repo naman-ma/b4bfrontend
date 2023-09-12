@@ -1,0 +1,48 @@
+<div class="app-body">
+  <main class="main d-flex align-items-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <div class="card-group">
+            <div class="card p-4">
+              <div class="card-body">
+                <form [formGroup]="loginForm" (ngSubmit)="login()" novalidate>
+                  <h1>Login</h1>
+                  <p class="text-muted">Sign in to your account</p>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="icon-user"></i></span>
+                    </div>
+                    <input type="text" class="form-control" formControlName="email" placeholder="Username"
+                      autocomplete="username" required>
+                  </div>
+                  <p class="text-danger"
+                    *ngIf="loginForm.controls.email.touched && loginForm.controls.email.invalid && loginForm.controls.email.errors.required">
+                    This is a required field</p>
+                  <p class="text-danger"
+                    *ngIf="loginForm.controls.email.touched && loginForm.controls.email.invalid && loginForm.controls.email.errors.email">
+                    This is not a valid email</p>
+                  <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="icon-lock"></i></span>
+                    </div>
+                    <input type="password" class="form-control" formControlName="password" placeholder="Password"
+                      autocomplete="current-password" required>
+                  </div>
+                  <p class="text-danger"
+                    *ngIf="loginForm.controls.password.touched && loginForm.controls.password.invalid && loginForm.controls.password.errors.required">
+                    This is a required field</p>
+                  <div class="row">
+                    <div class="col-6">
+                      <button type="submit" class="btn btn-theme px-4">Login</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
